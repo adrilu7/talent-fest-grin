@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
-import Admin from '../components/Admin/Admin'
-import RegisterCard from '../components/SignIn/Register'
-import Login from '../components/SignIn/SignIn';
-import Err from '../components/Page404/Page404'
-import Home from '../components/Home/Home';
+import Admin from '../Components/Admin/Admin'
+import RegisterCard from '../Components/SignIn/Register'
+import Login from '../Components/SignIn/SignIn';
+import Err from '../Components/Page404/Page404'
+import Home from '../Components/Home/Home';
 
 const admin = () => (
     <div>
