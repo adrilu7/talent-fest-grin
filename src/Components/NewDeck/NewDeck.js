@@ -1,13 +1,19 @@
 import React, { Component } from "react";
-import { Dropdown, NavItem, Button, Card, CardTitle, Icon } from "react-materialize";
+import { Dropdown, NavItem, Button, Card, CardTitle } from "react-materialize";
 import "./NewDeck.css";
 
 class NewDeck extends Component {
+  selectCard(data) {
+    this.props.selectCard(data);
+  }
+
   render() {
-    console.log(this.props.data);
     return (
       <div className="deckContainer">
-        <p>Selecciona en que deck quieres guardar tus cartas seleccionadas:</p>
+        <p>
+          Selecciona en que deck quieres guardar las cartas que has
+          seleccionado:
+        </p>
         <Dropdown trigger={<Button>Seleccionar deck</Button>}>
           <NavItem id="OvereagerVictory">Overeager Victory</NavItem>
           <NavItem id="RoyalTsunami">Royal Tsunami</NavItem>
@@ -16,27 +22,25 @@ class NewDeck extends Component {
         </Dropdown>
         <p>Cartas seleccionadas:</p>
         {this.props.data.map((pokemonData, index) => (
-                        <Card 
-                            className="small pokemonCard"
-                            header={<CardTitle reveal image={pokemonData.imageUrl} waves='light'/>}
-                            title={pokemonData.name}
-                            reveal={
-                                <div className="centered">
-                                    <p>SET: {pokemonData.set} Hp</p>
-                                    <p>NÚMERO: {pokemonData.number}</p>
-                                    <p>RAREZA: {pokemonData.rarity}</p>
-                                    <p>HP: {pokemonData.hp}</p>
-                                    <p>PRECIO: ${Math.floor((Math.random()*10 +1))} MXN</p>
-                                    {/* <button type="button" >Agregar a deck</button> */}
-                                    <Button className="add-card" onClick={() => this.selectCard(this.props.data[index])}><Icon>add</Icon></Button>
-                                </div>
-
-                            }
-                            key={index}
-                            id={`${pokemonData.name}${index}`}
-                        >
-                        </Card>
-                    ))}
+          <Card
+            className="small pokemonCard"
+            header={
+              <CardTitle reveal image={pokemonData.imageUrl} waves="light" />
+            }
+            title={pokemonData.name}
+            reveal={
+              <div className="centered">
+                <p>SET: {pokemonData.set} Hp</p>
+                <p>NÚMERO: {pokemonData.number}</p>
+                <p>RAREZA: {pokemonData.rarity}</p>
+                <p>HP: {pokemonData.hp}</p>
+                <p>PRECIO: ${Math.floor(Math.random() * 10 + 1)} MXN</p>
+              </div>
+            }
+            key={index}
+            id={`${pokemonData.name}${index}`}
+          />
+        ))}
       </div>
     );
   }
