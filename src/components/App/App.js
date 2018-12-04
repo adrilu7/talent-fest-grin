@@ -13,6 +13,7 @@ import AdminPage from '../Admin/Admin';
 import Page404 from '../Page404/Page404';
 
 import * as ROUTES from '../../constants/routes';
+import withAuthentication from '../../Session/withAuthentication';
 
 const App = () => (
     <Router basename={process.env.PUBLIC_URL}>
@@ -29,4 +30,4 @@ const App = () => (
     </Router>
 );
 
-export default App;
+export default withAuthentication(App);
