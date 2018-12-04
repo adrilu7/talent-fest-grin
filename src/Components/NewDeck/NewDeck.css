@@ -1,7 +1,6 @@
 .deckContainer {
     flex: 1 1;
     max-width: 30%;
-    padding-left: 1em;
     margin-right: 3.6%;
     background-color: #eaecf3;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
@@ -10,6 +9,8 @@
     align-items: center;
     flex-direction: column;
     max-height: 200vw;
+    text-align: center;
+    padding: 1em;
 }
 
 .card.small {
@@ -18,8 +19,15 @@
     box-shadow: 0 0px 0px 0 rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0), 0 0px 0px 0px rgba(0,0,0,0);
 }
 
+.buttonsCards {
+    display: flex;
+    justify-content: center;
+}
+
 .get-deck {
     background-color: #E8CA29;
+    flex:1;
+    margin-right: 0.5em;
 }
 
 .get-deck:hover {
@@ -28,4 +36,13 @@
 
 .get-deck:focus {
     background-color: #E8CA29;
+}
+
+.save {
+    /* margin-top: 1em; */
+    flex: 1;
+}
+
+.save, .save:hover, .save:focus {
+    background-color: #4161c9;
 }

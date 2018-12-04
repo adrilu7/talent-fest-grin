@@ -20,6 +20,10 @@ nav {
     display: flex;
 }
 
+.brand-logo {
+    margin-left: 1em;
+}
+
 ul.hide-on-med-and-down {
     display: flex;
     justify-content: flex-end;

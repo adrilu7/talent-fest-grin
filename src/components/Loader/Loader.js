@@ -14,14 +14,5 @@ class Loader extends Component {
         }
     }
 };
-//   return (
-    // <div class="wrapper">
-    //   <div class="pokeball" />
-    // </div>
-//     <div>
-//         <p>Cargando ...</p>
-//     </div>
-//   );
-// };
 
 export default Loader;
