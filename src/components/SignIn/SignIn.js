@@ -20,7 +20,7 @@ class loginInput extends Component {
     login() {
         Firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then((user) => {
-                window.location.assign('/home');
+                window.location.assign(`${process.env.PUBLIC_URL}/home`);
 
             }).catch((err) => {
                 alert(err.code);
