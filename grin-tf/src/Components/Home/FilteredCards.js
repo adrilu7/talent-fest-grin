@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 
-const filteredCards = () => (
+const searchCards = () => (
     <div>
         <div className='nav'>
             <a href='#' className='nav-links'>Link 1</a>
@@ -37,4 +37,4 @@ const filteredCards = () => (
     </div>
 )
 
-export default filteredCards
+export default searchCards

@@ -11,8 +11,11 @@
   height: 342px;
   margin-top: 5px;
   border-radius: 5px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .deck-container {
   width: 200px;
@@ -45,7 +48,6 @@
   flex-flow: row wrap;
   justify-content: flex-end;
   height: 50px;
-  background-color: grey;
 }
 
 /* Medium screens */
@@ -71,3 +73,12 @@
   border-radius: 5px;
 }
 
+.footer {
+  display: flex;
+  flex-shrink: 0;
+  background-color: grey;
+}
+
+.card.login {
+  margin-top: 20%;
+}
