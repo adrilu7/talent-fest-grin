@@ -40,7 +40,7 @@ class Home extends Component {
         })
         swal({
             title: "¡Listo!",
-            text: "Se ha agregado la carta a tu deck'",
+            text: "Se ha seleccionado la carta",
             type: "success",
             confirmButtonColor: '#4161c9'
           })
