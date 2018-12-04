@@ -10,11 +10,8 @@ class NewDeck extends Component {
   render() {
     return (
       <div className="deckContainer">
-        <p>
-          Selecciona en que deck quieres guardar las cartas que has
-          seleccionado:
-        </p>
-        <Dropdown trigger={<Button>Seleccionar deck</Button>}>
+        <p>Selecciona en que deck quieres guardar tus cartas seleccionadas:</p>
+        <Dropdown trigger={<Button className="get-deck">Elige Deck</Button>}>
           <NavItem id="OvereagerVictory">Overeager Victory</NavItem>
           <NavItem id="RoyalTsunami">Royal Tsunami</NavItem>
           <NavItem divider />
