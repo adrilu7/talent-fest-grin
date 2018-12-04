@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 class SearchField extends Component {
 
   inputSearch(event){
-    this.props.getName(event.target.value);
+    this.props.getCard(event.target.value);
   }
 
   render() {
