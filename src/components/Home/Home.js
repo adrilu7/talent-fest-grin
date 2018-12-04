@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import NavBar from './Navbar';
 import SearchField from "../SearchField/SearchField";
 import DisplayCards from "../DisplayCards/DisplayCards";
-import NewDeck from "../NewDeck/NewDeck";
 import api from "../../lib/api";
 
 class Home extends Component {
@@ -10,8 +9,7 @@ class Home extends Component {
         super()
         this.state = {
             searchString: '',
-            searchResultList: [],
-            cardsInDeck: []
+            searchResultList: []
         }
     }
     // Get string to search
