@@ -11,7 +11,9 @@ class Home extends Component {
         super()
         this.state = {
             searchString: '',
-            searchResultList: []
+            searchResultList: [],
+            deckCards: [],
+            total: 0
         }
     }
     // Get string to search
@@ -25,14 +27,22 @@ class Home extends Component {
         this.setState({ searchResultList: pokemonData.cards })
     }
 
+    // Add card to deck preview
+    fromAddCardButtons(dataPokemon) {
+        this.setState({
+            deckCards: [ ...this.state.deckCards, dataPokemon ]
+        })
+    }
+
     render(){
+        console.log(this.state.deckCards);
         return ( 
             <div>
                 <NavBar />
                 <SearchField getCard={this.fromSearchField.bind(this)} doFetch={this.fromSearchByName.bind(this)}/>
                 <div className="main">
-                    <DisplayCard data={this.state.searchResultList} />
-                    <NewDeck/>
+                    <DisplayCard data={this.state.searchResultList} selectCard={this.fromAddCardButtons.bind(this)} />
+                    <NewDeck data={this.state.deckCards}/>
                     {/* <span className="col s12 m7 l7">This div is 12-columns wide on all screen sizes</span> */}
                     {/* <span className="col s12 m5 l5">6-columns (offset-by-6)</span> */}
                 </div>
