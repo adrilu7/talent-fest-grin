@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Card, CardTitle} from 'react-materialize';
-import './DisplayCards.css';
+import './DisplayCard.css';
 
 class DisplayCards extends Component {
     render () {
@@ -12,7 +12,16 @@ class DisplayCards extends Component {
                             className="pokemonCard"
                             header={<CardTitle reveal image={pokemonData.imageUrl} waves='light'/>}
                             title={pokemonData.name}
-                            reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}
+                            reveal={
+                                <div>
+                                    <p>SET: {pokemonData.set} Hp</p>
+                                    <p>NÚMERO: {pokemonData.number}</p>
+                                    <p>RAREZA: {pokemonData.rarity}</p>
+                                    <p>HP: {pokemonData.hp}</p>
+                                    <p>PRECIO: ${Math.floor((Math.random()*10 +1))} MXN</p>
+                                </div>
+
+                            }
                             key={index}
                         >
                         </Card>

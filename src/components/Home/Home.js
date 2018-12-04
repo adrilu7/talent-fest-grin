@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import NavBar from './Navbar';
+import NavBar from './NavBar';
 import SearchField from "../SearchField/SearchField";
-import DisplayCards from "../DisplayCards/DisplayCards";
+import DisplayCard from "../DisplayCards/DisplayCard";
+import NewDeck from "../NewDeck/NewDeck";
 import api from "../../lib/api";
+import './navBarStyle.css';
 
 class Home extends Component {
     constructor() {
@@ -28,8 +30,8 @@ class Home extends Component {
             <div>
                 <NavBar />
                 <SearchField getCard={this.fromSearchField.bind(this)} doFetch={this.fromSearchByName.bind(this)}/>
-                <div className="row with-padding">
-                    <DisplayCards className="col s12 m6 l6" data={this.state.searchResultList} />
+                <div className="main">
+                    <DisplayCard data={this.state.searchResultList} />
                     <NewDeck/>
                     {/* <span className="col s12 m7 l7">This div is 12-columns wide on all screen sizes</span> */}
                     {/* <span className="col s12 m5 l5">6-columns (offset-by-6)</span> */}

@@ -1,8 +1,9 @@
 import React from 'react';
+import './NewDeck.css';
 
 const NewDeck = () => {
     return ( 
-        <div className="col s12 m6 l6">
+        <div className="deckContainer">
             <span>Aquí van a ir las cartas</span>
         </div>
     );

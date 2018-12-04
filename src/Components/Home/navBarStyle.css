@@ -15,3 +15,7 @@ nav {
     padding-top: 3%;
     display: flex;
 }
+
+.main {
+    display: flex;
+}
