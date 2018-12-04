@@ -3,8 +3,12 @@ import {Card, CardTitle, Icon, Button} from 'react-materialize';
 import './DisplayCard.css';
 
 class DisplayCards extends Component {
+    selectCard(data) {
+        this.props.selectCard(data);
+    }
+
     render () {
-        console.log(this.props.data)
+        // console.log(this.props.data[0])
         return (
                 <div className="cardsContainer">
                     {this.props.data.map((pokemonData, index) => (
@@ -19,11 +23,13 @@ class DisplayCards extends Component {
                                     <p>RAREZA: {pokemonData.rarity}</p>
                                     <p>HP: {pokemonData.hp}</p>
                                     <p>PRECIO: ${Math.floor((Math.random()*10 +1))} MXN</p>
-                                    <Button className="add-card"><Icon>add</Icon></Button>
+                                    {/* <button type="button" >Agregar a deck</button> */}
+                                    <Button className="add-card" onClick={() => this.selectCard(this.props.data[index])}><Icon>add</Icon></Button>
                                 </div>
 
                             }
                             key={index}
+                            id={`${pokemonData.name}${index}`}
                         >
                         </Card>
                     ))}

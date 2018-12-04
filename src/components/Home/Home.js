@@ -11,7 +11,9 @@ class Home extends Component {
         super()
         this.state = {
             searchString: '',
-            searchResultList: []
+            searchResultList: [],
+            deckCards: [],
+            total: 0
         }
     }
     // Get string to search
@@ -25,14 +27,22 @@ class Home extends Component {
         this.setState({ searchResultList: pokemonData.cards })
     }
 
+    // Add card to deck preview
+    fromAddCardButtons(dataPokemon) {
+        this.setState({
+            deckCards: [ ...this.state.deckCards, dataPokemon ]
+        })
+    }
+
     render(){
+        console.log(this.state.deckCards);
         return ( 
             <div>
                 <NavBar />
                 <SearchField getCard={this.fromSearchField.bind(this)} doFetch={this.fromSearchByName.bind(this)}/>
                 <div className="main">
-                    <DisplayCard data={this.state.searchResultList} />
-                    <NewDeck/>
+                    <DisplayCard data={this.state.searchResultList} selectCard={this.fromAddCardButtons.bind(this)} />
+                    <NewDeck data={this.state.deckCards}/>
                 </div>
             </div>
         );

@@ -1,14 +1,15 @@
 import React from 'react';
 import {Navbar, NavItem} from 'react-materialize';
-import logo from '../../assets/POKEDECK-NOMBRE.svg'
-import './navBar.css'
+import logo from '../../assets/POKEDECK-NOMBRE.svg';
+import SignOut from '../SignOut/SignOut';
+import './navBarStyle.css'
 
 const navBar = () => (
-    <Navbar className='nav-blue' right>
-        <NavItem> <img src={logo} alt="logo-mypokedeck" className='logo'/> </NavItem>
-        <NavItem></NavItem>
-        <NavItem></NavItem>
-    </Navbar>   
+    <div>
+            <Navbar brand={<img src={logo} alt="logo-mypokedeck" className='logo'/>}>
+                <NavItem><SignOut/></NavItem>
+            </Navbar>
+        </div>
 )
 
 export default navBar
