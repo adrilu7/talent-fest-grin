@@ -1,22 +1,17 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
+import {Row, Col} from 'react-materialize';
+import NavBar from './Navbar';
 
-import withAuthorization from "../../Session/withAuthorization";
-// import AuthUserContext from '../../Session/AuthUserContext';
-import SearchField from "../SearchField/SearchField";
+const Home = () => (
+    <div>
+        <NavBar />
+        <div class="row with-padding">
+            <span class="col s12 m7 l7">This div is 12-columns wide on all screen sizes</span>
+            <span class="col s6 m3 l3">6-columns (offset-by-6)</span>
+        </div>
+    </div>        
 
-class HomePage extends Component {
-    render(){
-        return ( 
-            <Fragment>
-                    <div>
-                        <h1>Home Page</h1>
-                        <SearchField/>
-                    </div>
-            </Fragment>
-        );
-    }
-}
+);
  
-const authCondition = authUser => !!authUser;
 
-export default withAuthorization(authCondition)(HomePage);
+export default Home;

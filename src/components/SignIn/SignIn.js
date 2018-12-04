@@ -1,46 +1,64 @@
-import React, { Component } from "react";
-import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Row, Input, Button } from 'react-materialize'
+import Firebase from '../../firebase/FirebaseCredentials'
+import { Link, BrowserRouter } from 'react-router-dom'
+import FirebaseAuth from '../../firebase/FirebaseUI'
+import logoCircular from '../../assets/pokedeck-icono-circular.svg'
+import './SignIn.css'
 
-// import logo from ".../../assets/logotipo-pokedeck-login.png";
-import iconGoogle from "../../assets/google-logo-icon-PNG-Transparent-Background.png";
-import { auth } from '../../firebase';
-import * as ROUTES from '../../constants/routes';
-import './SignIn.css';
+class loginInput extends Component {
+    constructor(props) {
+        super(props);
+        this.login = this.login.bind(this);
+        this.handleOnChange = this.handleOnChange.bind(this);
+        this.state = {
+            email: '',
+            password: '',
+        }
+    }
 
-const SignInPage = ({ history }) =>
-  <main>
-  {/* <img src={logo} alt="logo-pokedeck" id="logo-index" /> */}
-  <img alt="logo-pokedeck" id="logo-index" />
-  <h1>my.pokedeck</h1>
-  <p>
-    Texto de introducción
-  </p>
-  <SignInButton history={history} />
-  </main>
+    login() {
+        Firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then((user) => {
+                window.location.assign('/home');
 
-class SignInButton extends Component {
-  signInWithGoogle = () => {
-    // console.log('holi');
-    const {
-      history,
-    } = this.props;
+            }).catch((err) => {
+                alert(err.code);
+            });
+    }
 
-    auth.doSignInWithGoogle()
-    history.push(ROUTES.HOME);
-  }
+    handleOnChange(event) {
+        this.setState({ [event.target.name]: event.target.value })
+    }
 
-  render() {
-    return (
-        <button type="button" id="btn-google" onClick={()=>this.signInWithGoogle()}>
-          <img src={iconGoogle} alt="icon-google" />
-          Google
-        </button>
-    );
-  }
+    render() {
+        return (
+            <div className='entire-page'>
+            <div className='inputContainer'>
+            <Row>
+                <img src={logoCircular} height='150' width='150'/>
+            </Row>
+
+                <form>
+                    <Row>
+                        <Input value={this.state.email} onChange={this.handleOnChange} className='inputHover' s={10} m={10} l={10} label="Email" name='email' type='email' validate></Input>
+                    </Row>
+                    <Row>
+                        <Input value={this.state.password} onChange={this.handleOnChange} className='inputHover' s={10} m={10} l={10} label="Password" validate name='password' type='password'></Input>
+                    </Row>
+                    <Row>
+                    </Row>
+                    <Row>
+                        <Button type='submit' onClick={this.login} s={10} m={10} l={10} waves='light' className='signInButton'>Conectate</Button>
+                    </Row>
+                </form>
+                <Row>
+                    <FirebaseAuth />
+                    <Link to='/register' s={10} m={10} l={10} className='newUser'>Crear Cuenta</Link>
+                </Row>
+            </div>
+            </div>
+        )
+    }
 }
-
-export default withRouter(SignInPage);
-
-export {
-  SignInButton,
-}
+export default loginInput
