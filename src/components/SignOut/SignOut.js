@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; 
 import Firebase from '../../firebase/FirebaseCredentials';
+import {Icon} from 'react-materialize';
 import { Link } from 'react-router-dom';
 
 class signOut extends Component {
@@ -14,7 +15,8 @@ class signOut extends Component {
     }
     render() {
         return (
-          <Link to='/' onClick={this.logout}>Logout</Link>
+          <Link to='/' onClick={this.logout}><Icon>exit_to_app
+          </Icon></Link>
         );
     }
 }
