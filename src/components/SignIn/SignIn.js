@@ -36,9 +36,8 @@ class loginInput extends Component {
             <div className='entire-page'>
             <div className='inputContainer'>
             <Row>
-                <img src={logoCircular} alt="logo-mypockedeck" height='150' width='150'/>
+                <img src={logoCircular} alt='circular-logo' height='150' width='150'/>
             </Row>
-
                 <form>
                     <Row>
                         <Input value={this.state.email} onChange={this.handleOnChange} className='inputHover' s={10} m={10} l={10} label="Email" name='email' type='email' validate></Input>
