@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import NavBar from './Navbar';
 import SearchField from "../SearchField/SearchField";
 import DisplayCard from "../DisplayCards/DisplayCard";
 import NewDeck from "../NewDeck/NewDeck";
 import api from "../../lib/api";
+import NavBar from './Navbar'
 import './navBarStyle.css';
 
 class Home extends Component {

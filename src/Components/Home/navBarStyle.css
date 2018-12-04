@@ -8,12 +8,22 @@ nav {
     background-color: #4161c9;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: space-between;
+}
+
+.nav-wrapper {
+    width: 100vw;
+
 }
 
 .row.with-padding {
     padding-top: 3%;
     display: flex;
+}
+
+ul.hide-on-med-and-down {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .main {
