@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Input, Button } from 'react-materialize'
 import Firebase from '../../firebase/FirebaseCredentials'
-import { Link, BrowserRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import FirebaseAuth from '../../firebase/FirebaseUI'
 import logoCircular from '../../assets/pokedeck-icono-circular.svg'
 import './SignIn.css'
@@ -36,7 +36,7 @@ class loginInput extends Component {
             <div className='entire-page'>
             <div className='inputContainer'>
             <Row>
-                <img src={logoCircular} height='150' width='150'/>
+                <img src={logoCircular} alt="logo-mypockedeck" height='150' width='150'/>
             </Row>
 
                 <form>
