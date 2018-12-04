@@ -1,8 +1,9 @@
 .loader {
     display: flex;
     justify-content: center;
-    width: 100%;
-}
+    margin: 40px auto 0 auto;
+    flex-basis: 35%;
+  }
 
 .lds-dual-ring {
     display: inline-block;
@@ -28,4 +29,3 @@
       transform: rotate(360deg);
     }
   }
-  
