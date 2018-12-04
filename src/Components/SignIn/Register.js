@@ -49,7 +49,7 @@ class registerInput extends Component {
         <div className='entire-page'>
         <div className='inputContainer'>
             <Row>
-                <img src={logoCircular} height='150' width='150'/>
+                <img src={logoCircular} alt='circular-logo' height='150' width='150'/>
             </Row>
             <form>
                 <Row>
