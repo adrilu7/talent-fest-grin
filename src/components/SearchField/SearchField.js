@@ -7,16 +7,22 @@ class SearchField extends Component {
     this.props.getCard(event.target.value);
   }
 
+  onSubmit(event) {
+    event.preventDefault();
+    this.props.doFetch();
+  }
+
   render() {
     return (
-      <section>
+      <form onSubmit={this.onSubmit.bind(this)}>
         <input
           value={this.props.initialName}
           onChange={this.inputSearch.bind(this)}
           type="text"
           placeholder="Ingresa que carta buscas"
         />
-      </section>
+        <button type="submit">Buscar</button>
+      </form >
     );
   }
 }

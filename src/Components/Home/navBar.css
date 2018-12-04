@@ -1,0 +1,17 @@
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-top: -30%;
+}
+
+nav {
+    background-color: #4161c9;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.row.with-padding {
+    padding-top: 3%;
+    display: flex;
+}
