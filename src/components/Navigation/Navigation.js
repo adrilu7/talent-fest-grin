@@ -5,7 +5,7 @@ import AuthUserContext from '../../Session/AuthUserContext';
 import * as ROUTES from '../../constants/routes';
 import SignOutButton from '../SignOut/SignOut';
 
-const Navigation = () =>
+const Navigation = () => 
   <AuthUserContext.Consumer>
     { authUser => authUser
       ? <NavigationAuth />
@@ -35,9 +35,8 @@ const NavigationNonAuth = () => (
                 <li>
                     <Link to= {ROUTES.SIGN_IN}>Entrar</Link>
                 </li>
-            </ul
-            >
+            </ul>
         </div> 
-  );
+);
 
 export default Navigation;
