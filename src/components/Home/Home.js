@@ -43,8 +43,6 @@ class Home extends Component {
                 <div className="main">
                     <DisplayCard data={this.state.searchResultList} selectCard={this.fromAddCardButtons.bind(this)} />
                     <NewDeck data={this.state.deckCards}/>
-                    {/* <span className="col s12 m7 l7">This div is 12-columns wide on all screen sizes</span> */}
-                    {/* <span className="col s12 m5 l5">6-columns (offset-by-6)</span> */}
                 </div>
             </div>
         );
