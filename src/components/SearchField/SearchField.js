@@ -16,7 +16,7 @@ class SearchField extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit.bind(this)}>
+      <form className="center-form" onSubmit={this.onSubmit.bind(this)}>
         <input
           className="search-bar"
           value={this.props.initialName}
