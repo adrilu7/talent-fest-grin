@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase/app';
 import firebaseConfig from './FirebaseCredentials';
-import SignOut from '../Components/SignOut/SignOut';
+import SignOut from '../components/SignOut/SignOut';
 
 class SignInScreen extends React.Component {
     state = {
