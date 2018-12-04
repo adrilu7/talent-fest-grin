@@ -1,7 +1,6 @@
 .cardsContainer{
     display: flex;
     flex-wrap: wrap;
-    /* margin: 0 auto; */
     justify-content: space-evenly;
     flex:1;
 }
@@ -9,7 +8,17 @@
 .pokemonCard {
     padding-bottom: 1em;
     margin-bottom: 1em;
-    min-width: 30%;
-    max-width: 30%;
-    flex: 1;
+    padding-left: 1em;
+}
+
+.add-card {
+    background-color: #E8CA29;
+    
+}
+
+.centered {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }

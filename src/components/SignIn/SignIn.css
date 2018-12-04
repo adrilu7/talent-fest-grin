@@ -23,6 +23,20 @@
     }
 }
 
+@media screen and (max-width: 769px) {
+    .inputContainer {
+        width: 50vh;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .entire-page {
+        background-color: white;
+    }
+    .inputContainer {
+        box-shadow: 0px 0px 0px 0px;
+    }
+}
 .signInButton {
     background-color: #E8CA29;
     display: flex;
@@ -64,4 +78,22 @@ div.col.input-field.s10.m10.l10 {
     text-shadow: 4px 2px #D5E7F7;;
     margin-top: 1%;
     margin-right: 5%;
+}
+
+.btn.signInButton.search {
+    margin-left: 2%;
+}
+.btn.signInButton.search:focus {
+    background-color: #E8CA29;
+}
+
+
+input.search-bar {
+    width: 66%;
+    margin-left: 2%;
+}
+
+.card.card-title {
+    font-size: 98%;
+    font-weight: 300;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card, CardTitle} from 'react-materialize';
+import {Card, CardTitle, Icon, Button} from 'react-materialize';
 import './DisplayCard.css';
 
 class DisplayCards extends Component {
@@ -13,12 +13,13 @@ class DisplayCards extends Component {
                             header={<CardTitle reveal image={pokemonData.imageUrl} waves='light'/>}
                             title={pokemonData.name}
                             reveal={
-                                <div>
+                                <div className="centered">
                                     <p>SET: {pokemonData.set} Hp</p>
                                     <p>NÚMERO: {pokemonData.number}</p>
                                     <p>RAREZA: {pokemonData.rarity}</p>
                                     <p>HP: {pokemonData.hp}</p>
                                     <p>PRECIO: ${Math.floor((Math.random()*10 +1))} MXN</p>
+                                    <Button className="add-card"><Icon>add</Icon></Button>
                                 </div>
 
                             }

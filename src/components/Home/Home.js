@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
+import NavBar from './Navbar';
 import SearchField from "../SearchField/SearchField";
 import DisplayCard from "../DisplayCards/DisplayCard";
 import NewDeck from "../NewDeck/NewDeck";
@@ -33,23 +33,12 @@ class Home extends Component {
                 <div className="main">
                     <DisplayCard data={this.state.searchResultList} />
                     <NewDeck/>
-                    {/* <span className="col s12 m7 l7">This div is 12-columns wide on all screen sizes</span> */}
-                    {/* <span className="col s12 m5 l5">6-columns (offset-by-6)</span> */}
                 </div>
             </div>
         );
     }
 }
-// const Home = () => (
-//     <div>
-//         <NavBar />
-//         <div class="row with-padding">
-//             <span class="col s12 m7 l7">This div is 12-columns wide on all screen sizes</span>
-//             <span class="col s6 m3 l3">6-columns (offset-by-6)</span>
-//         </div>
-//     </div>        
 
-// );
  
 
 export default Home;
